@@ -1,4 +1,397 @@
+<!DOCTYPE html>
+<html lang="zxx">
 
-<html>
-<%String path=request.getContextPath();%>
+<head>
+	<title>Home</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="" />
+	<!-- //Meta tag Keywords -->
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<!-- font-awesome-icons -->
+	<link href="css/font-awesome.css" rel="stylesheet ">
+	<!-- //font-awesome-icons -->
+	<!-- /Fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+		rel="stylesheet">
+	<!-- //Fonts -->
+</head>
+
+<body>
+	<!-- header -->
+	<header>
+		<div class="container">
+			<div class="header d-lg-flex justify-content-between align-items-center">
+				<div class="header-agile">
+					<h1>
+						<a class="navbar-brand logo" href="index.html">
+							<span><img src="images/logo.png" alt=""></span>
+						</a>
+					</h1>
+				</div>
+				<div class="nav_w3ls">
+					<nav>
+						<label for="drop" class="toggle mt-lg-0 mt-1"><span class="fa fa-bars"
+								aria-hidden="true"></span></label>
+						<input type="checkbox" id="drop" />
+						<ul class="menu">
+							<li class="mr-lg-3 mr-2 active"><a href="index.html">网站首页</a></li>
+							<li class="mr-lg-3 mr-2"><a href="aboutus.html">企业简介</a></li>
+							<li class="mr-lg-3 mr-2 p-0">
+								<!-- First Tier Drop Down -->
+								<label for="drop-2" class="toggle">新闻资讯<span class="fa fa-angle-down"
+										aria-hidden="true"></span></label>
+								<a href="news.html">新闻资讯<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+								<input type="checkbox" id="drop-2" />
+								<ul class="inner-dropdown">
+									<li><a href="news.html">标题列表</a></li>
+									<li><a href="news.html">标题列表</a></li>
+								</ul>
+							</li>
+							<li class="mr-lg-3 mr-2 p-0">
+								<!-- First Tier Drop Down -->
+								<label for="drop-3" class="toggle">案例展示<span class="fa fa-angle-down"
+										aria-hidden="true"></span></label>
+								<a href="product1.html">案例展示<span class="fa fa-angle-down"
+										aria-hidden="true"></span></a>
+								<input type="checkbox" id="drop-3" />
+								<ul class="inner-dropdown">
+									<li><a href="product1.html">两列图片列表</a></li>
+									<li><a href="product2.html">三列标题列表</a></li>
+									<li><a href="product3.html">四列详情页面</a></li>
+								</ul>
+							</li>
+							<li class="mr-lg-3 mr-2"><a href="detail1.html">详情页面</a></li>
+							<li class="mr-lg-3 mr-2"><a href="contact.html">联系方式</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //header -->
+	<!-- banner -->
+
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active" style="background-image: url(images/ban1.jpg);">
+				<div class="banner-text">
+					<div class="container">
+						<h2 class="agile-title text-capitalize">We Create And Renovate Hair Style Trends</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						<a href="contact.html" class="btn">View details</a>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item" style="background-image: url(images/ban2.jpg);">
+				<div class="banner-text">
+					<div class="container">
+						<h2 class="agile-title text-capitalize">We Create And Renovate Hair Style Trends</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						<a href="contact.html" class="btn">View details</a>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item" style="background-image: url(images/ban3.jpg);">
+				<div class="banner-text">
+					<div class="container">
+						<h2 class="agile-title text-capitalize">We Create And Renovate Hair Style Trends</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						<a href="contact.html" class="btn">View details</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<!-- //banner -->
+
+	<!-- about -->
+	<section class="content-info" style="background-image: url();">
+		<div class="container">
+			<h3 class="heading text-center mb-3 mb-sm-5">About us/关于我们</h3>
+			<div class="info-w3pvt-mid">
+				<div class="title-desc text-center">
+					<p>
+						Praesent ullamcorper dui turpis.At vero eos et accusam et justo duo dolores et ea rebum.Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis. Praesent ullamcorper dui turpis.At vero eos et accusam et justo duo dolores et ea rebum.Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis.
+					</p>
+					<a class="btn mt-lg-4 mt-3 read scroll" href="#" role="button">查看更多</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- //about -->
+
+<!-- pricing -->
+<section class="new py-5" style="background-image: url(images/bg2.jpg);">
+	<div class="container py-md-5">
+		<div class="row pricing-grids">
+			<div class="col-lg-6  mb-lg-0 mb-5">
+				<div class="padding">
+					<h3 class="text-light pb-2">公司动态/Company news</h3>
+					<!-- Item starts -->
+					<div class="menu-item my-3">
+						<div class="row border-dot no-gutters">
+							<div class="col-8 menu-item-name">
+								<a href="detail1.html">
+									<h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
+								</a>
+							</div>
+							<div class="col-4 menu-item-price text-right">
+								<h6 class="text-light">2020-3-07</h6>
+							</div>
+						</div>
+
+					</div>
+					<!-- Item ends -->
+					<!-- Item starts -->
+					<div class="menu-item my-3">
+						<div class="row border-dot no-gutters">
+							<div class="col-8 menu-item-name">
+								<a href="detail1.html">
+									<h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
+								</a>
+							</div>
+							<div class="col-4 menu-item-price text-right">
+								<h6 class="text-light">2020-3-10</h6>
+							</div>
+						</div>
+					</div>
+					<!-- Item ends -->
+					<!-- Item starts -->
+					<div class="menu-item my-3">
+						<div class="row border-dot no-gutters">
+							<div class="col-8 menu-item-name">
+								<a href="detail1.html">
+									<h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
+								</a>
+							</div>
+							<div class="col-4 menu-item-price text-right">
+								<h6 class="text-light">2020-3-15</h6>
+							</div>
+						</div>
+					</div>
+					<!-- Item ends -->
+					<!-- Item starts -->
+					<div class="menu-item my-3">
+						<div class="row border-dot no-gutters">
+							<div class="col-8 menu-item-name">
+								<a href="detail1.html">
+									<h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
+								</a>
+							</div>
+							<div class="col-4 menu-item-price text-right">
+								<h6 class="text-light">2020-3-15</h6>
+							</div>
+						</div>
+					</div>
+					<!-- Item ends -->
+					<!-- Item starts -->
+					<div class="menu-item my-3">
+						<div class="row border-dot no-gutters">
+							<div class="col-8 menu-item-name">
+								<a href="detail1.html">
+									<h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
+								</a>
+							</div>
+							<div class="col-4 menu-item-price text-right">
+								<h6 class="text-light">2020-3-20</h6>
+							</div>
+						</div>
+					</div>
+					<!-- Item ends -->
+					<!-- Item starts -->
+					<div class="menu-item my-3">
+						<div class="row border-dot no-gutters">
+							<div class="col-8 menu-item-name">
+								<a href="detail1.html">
+									<h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
+								</a>
+							</div>
+							<div class="col-4 menu-item-price text-right">
+								<h6 class="text-light">2020-3-25</h6>
+							</div>
+						</div>
+					</div>
+					<div class="menu-item my-3">
+						<div class="row border-dot no-gutters">
+							<div class="col-8 menu-item-name">
+								<a href="detail1.html">
+									<h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
+								</a>
+							</div>
+							<div class="col-4 menu-item-price text-right">
+								<h6 class="text-light">2020-3-25</h6>
+							</div>
+						</div>
+					</div>
+					<!-- Item ends -->
+				</div>
+			</div>
+			<div class="col-lg-6 mb-lg-0 mb-5">
+				<div class="padding">
+					<a href="#"><img class="pt-4" src="images/contact.jpg" alt=""></a>
+					<div class="menu-item mt-3 mb-2">
+						<div class="row no-gutters">
+							<div class="col-8 menu-item-name">
+								<a href="detail1.html">
+									<h5 class="text-light">TRIM YOUR MUSTACHES STYLE</h5>
+								</a>
+							</div>
+							<div class="col-4 menu-item-price text-right">
+								<h6 class="text-light">2020-3-25</h6>
+							</div>
+						</div>
+					</div>
+					<p class="text-light">Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /services -->
+
+	<section class="services" id="services" style="background-image: url();">
+		<div class="container">
+			<h3 class="heading text-center mb-5">案例展示/CASE</h3>
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-12 mb-2">
+					<div class="ab-content-inner">
+						<a href="single.html"><img src="images/services1.jpg" alt="news image" class="img-fluid"></a>
+						<div class="ab-info-con">
+							<a href="single.html">
+								<h4>88001</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-12 mb-2">
+					<div class="ab-content-inner">
+						<a href="single.html"><img src="images/services2.jpg" alt="news image" class="img-fluid"></a>
+						<div class="ab-info-con">
+							<a href="single.html">
+								<h4>88001</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-12 mb-2">
+					<div class="ab-content-inner">
+						<a href="single.html"><img src="images/services3.jpg" alt="news image" class="img-fluid"></a>
+						<div class="ab-info-con">
+							<a href="single.html">
+								<h4>88001</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-12 mb-2">
+					<div class="ab-content-inner">
+						<a href="single.html"><img src="images/services4.jpg" alt="news image" class="img-fluid"></a>
+						<div class="ab-info-con">
+							<a href="single.html">
+								<h4>88001</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-12 mb-2">
+					<div class="ab-content-inner">
+						<a href="single.html"><img src="images/services5.jpg" alt="news image" class="img-fluid"></a>
+						<div class="ab-info-con">
+							<a href="single.html">
+								<h4>88001</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-12 mb-2">
+					<div class="ab-content-inner">
+						<a href="single.html"><img src="images/services6.jpg" alt="news image" class="img-fluid"></a>
+						<div class="ab-info-con">
+							<a href="single.html">
+								<h4>88001</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-12 mb-2">
+					<div class="ab-content-inner">
+						<a href="single.html"><img src="images/services5.jpg" alt="news image" class="img-fluid"></a>
+						<div class="ab-info-con">
+							<a href="single.html">
+								<h4>88001</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-12 mb-2">
+					<div class="ab-content-inner">
+						<a href="single.html"><img src="images/services2.jpg" alt="news image" class="img-fluid"></a>
+						<div class="ab-info-con">
+							<a href="single.html">
+								<h4>88001</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /services -->
+
+
+	<!-- footer -->
+	<footer class="footer-content mt-5" style="background-image: url();">
+		<div class="container px-lg-6">
+			<div class="footer-top-inner-w3ls ">
+				<div class="text-center">
+					<div class="last-w3ls-contact">
+						<p><a href="#">Donec consequat sam libero tempore</a></p>
+					</div>
+					<div class="last-w3ls-contact">
+						<p><a href="#">+ 456 123 7890</a></p>
+					</div>
+					<div class="last-w3ls-contact">
+						<p>
+							<a href="#">info@example.com</a>
+						</p>
+					</div>
+					<div class="last-w3ls-contact">
+						<p><a href="#">90 nsequursu dsdesdc,
+							xxx Honey State 049436.</a></p>
+					</div>
+				</div>
+			</div>
+			<p class="copy-right-grids text-center">Copyright &copy; 2020.Company name All
+				rights reserved.
+			</p>
+		</div>
+		<!-- //footer bottom -->
+	</footer>
+	<!-- //footer -->
+
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
 </html>
