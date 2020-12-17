@@ -25,18 +25,8 @@
                     <ul class="menu">
                         <li class="mr-lg-3 mr-2"><a href="index.html">网站首页</a></li>
                         <li class="mr-lg-3 mr-2"><a href="aboutus.html">风格评估</a></li>
-                        <li class="mr-lg-3 mr-2 p-0">
-                            <!-- First Tier Drop Down -->
-                            <label for="drop-2" class="toggle">新闻资讯<span class="fa fa-angle-down"
-                                                                         aria-hidden="true"></span></label>
-                            <a href="news.html">新闻资讯<span class="fa fa-angle-down" aria-hidden="true"></span></a>
-                            <input type="checkbox" id="drop-2" />
-                            <ul class="inner-dropdown">
-                                <li><a href="news.html">家居设计文章</a></li>
-                                <li><a href="news.html">公司最新通告</a></li>
-                            </ul>
-                        </li>
-                        <li class="mr-lg-3 mr-2"><a href="index.html">案例展示</a></li>
+                        <li class="mr-lg-3 mr-2"><a href="index.html">文章与通告</a></li>
+                        <li class="mr-lg-3 mr-2"><a href="index.html">室内设计案例</a></li>
                         <li class="mr-lg-3 mr-2"><a href="contact.html">关于我们</a></li>
                     </ul>
                 </nav>
