@@ -47,8 +47,8 @@
                     </div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
-                        <a href="#" class="item">我的账户</a>
-                        <a href="#" class="item">注销</a>
+                        <a href="<%=path%>/admin/myaccount" class="item">我的账户</a>
+                        <a href="<%=path%>/admin/logout" class="item">注销</a>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
     <div class="ui container">
         <div class="ui success large message">
             <h2>Hi,</h2>
-            <p>aaa，欢迎登录</p>
+            <p>${sessionScope.user.nickname},欢迎登录</p>
         </div>
         <img src="<%=path%>/resources/admin/images/adminindex.jpg" class="ui rounded bordered fluid image">
 

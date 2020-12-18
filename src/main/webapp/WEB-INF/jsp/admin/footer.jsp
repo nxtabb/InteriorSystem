@@ -24,9 +24,9 @@
             <div class="three wide column">
                 <h4 class="ui inverted header">相关搜索</h4>
                 <div class="ui inverted link list">
-                    <a href="http://www.hrbeu.edu.cn/" class="item">哈尔滨工程大学</a>
-                    <a href="http://cstc.hrbeu.edu.cn/" class="item">哈尔滨工程大学计算机科学与技术学院</a>
-                    <a href="http://homepage.hrbeu.edu.cn/web/liujie1" class="item">教师主页</a>
+                    <a href="http://www.baidu.com" class="item">test</a>
+                    <a href="http://www.baidu.com" class="item">test</a>
+                    <a href="http://www.baidu.com" class="item">test</a>
                 </div>
             </div>
             <div class="three wide column">
@@ -40,7 +40,7 @@
             <div class="seven wide column">
                 <h4 class="ui inverted header">介绍</h4>
                 <p>
-                    这是哈尔滨工程大学刘杰教授实验室专用网站，用于进行学习总结。
+                    Praesent ullamcorper dui turpis.At vero eos et accusam et justo duo dolores et ea rebum.Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis.
                 </p>
             </div>
 

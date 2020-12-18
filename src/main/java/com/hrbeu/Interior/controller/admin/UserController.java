@@ -79,6 +79,11 @@ public class UserController {
         }
 
     }
+    @GetMapping("/myaccount")
+    public String myAccount(HttpServletRequest request){
+        return "admin/myaccount";
+
+    }
 
 
 
