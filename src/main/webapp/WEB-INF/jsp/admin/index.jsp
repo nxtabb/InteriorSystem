@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%String path=request.getContextPath();%>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
@@ -30,7 +31,7 @@
         <!--创建一个menu-->
         <div class="ui inverted secondary stackable menu">
             <!--创建一个logo-->
-            <a href="#"><h2 class="ui teal header item" id="index-btn">Liujie's Lab后台管理</h2></a>
+            <a href="#"><h2 class="ui teal header item" id="index-btn">后台管理系统</h2></a>
             <!--菜单栏-->
             <a href="#" class="m-item item m-mobile-hide"><i class="image icon"></i>首页轮播图管理</a>
             <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>文档管理</a>
@@ -41,8 +42,8 @@
             <div class="right m-item m-mobile-hide menu">
                 <div class="ui dropdown item">
                     <div class="text">
-                        <img src="#" >
-                        aaa
+                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3666320968,1466738194&fm=26&gp=0.jpg" >
+                        ${sessionScope.user.nickname}
                     </div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
@@ -64,7 +65,7 @@
             <h2>Hi,</h2>
             <p>aaa，欢迎登录</p>
         </div>
-        <img src="<%=path%>/resources/admin/images/index.jpg" class="ui rounded bordered fluid image">
+        <img src="<%=path%>/resources/admin/images/adminindex.jpg" class="ui rounded bordered fluid image">
 
     </div>
 
