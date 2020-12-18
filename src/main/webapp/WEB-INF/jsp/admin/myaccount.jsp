@@ -27,7 +27,7 @@
                 <h2 class="ui teal image header">
                     <!--<img src="../../static/images/logo.png" class="image">-->
                 </h2>
-                <form class="ui large form" method="post" id="login-form" action="<%=path%>/admin/login">
+                <form class="ui large form" method="post" id="login-form" action="<%=path%>/admin/updateuser">
                     <div class="ui stacked segment">
                         <div class="required field">
                             <div class="ui left icon input">
@@ -37,14 +37,20 @@
                         </div>
                         <div class="required field">
                             <div class="ui left icon input">
-                                <i class="user icon"></i>
+                                <i class="header icon"></i>
                                 <input type="text" name="nickname" id="nickname-input" value="${sessionScope.user.nickname}">
                             </div>
                         </div>
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
-                                <input type="password" name="password" id="password-input" placeholder="密码">
+                                <input type="password" name="password" id="password-input" placeholder="新的密码">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="password" id="password-input-check" placeholder="确认密码">
                             </div>
                         </div>
                         <div class="ui fluid large teal submit button" id="login">登录</div>
@@ -75,6 +81,13 @@
                 rules:[{
                     type:'empty',
                     prompt:'请输入密码'
+                }]
+            },
+            nickname:{
+                identifier: 'nickname',
+                rules:[{
+                    type:'empty',
+                    prompt:'请输入昵称'
                 }]
             }
         }
