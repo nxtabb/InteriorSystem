@@ -6,6 +6,7 @@ import com.hrbeu.Interior.utils.MD5Util;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -32,7 +33,7 @@ public class UserController {
             HttpSession session = request.getSession();
             session.setAttribute("user",user);
         }
-        model.setViewName("redirect:/admin/index");
+        model.setViewName("redirect:/admin/");
         return model;
     }
 
@@ -75,14 +76,27 @@ public class UserController {
             HttpSession session = request.getSession();
             user.setPassword(null);
             session.setAttribute("user",user);
-            return "redirect:/admin/index";
+            return "redirect:/admin/";
         }
 
     }
     @GetMapping("/myaccount")
     public String myAccount(HttpServletRequest request){
         return "admin/myaccount";
-
+    }
+    @PostMapping("/updateuser")
+    public String updateUser(@Param("username")String username, @Param("password")String password, @Param("nickname")String nickname, @Param("email")String email, Model model,HttpServletRequest request){
+        int effNum = userService.updateUser(username,password,nickname,email);
+        User user = userService.checkUser(username,password);
+        if(effNum>=1){
+            model.addAttribute("success",true);
+            HttpSession session = request.getSession();
+            session.setAttribute("user",user);
+            return "admin/index";
+        }else {
+            model.addAttribute("success",false);
+            return "redirect:/admin/";
+        }
     }
 
 

@@ -1,6 +1,7 @@
 package com.hrbeu.Interior.controller.admin;
 
 import com.hrbeu.Interior.pojo.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/admin")
 public class AdminPageController {
-    @GetMapping("/index")
+    @GetMapping("/")
     public String adminIndex(HttpServletRequest request){
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("user");
@@ -29,6 +30,7 @@ public class AdminPageController {
 
     @GetMapping("/register")
     public String register(){
+
         return "admin/register";
     }
 }

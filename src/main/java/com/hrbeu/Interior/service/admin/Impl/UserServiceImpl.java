@@ -41,4 +41,11 @@ public class UserServiceImpl implements UserService {
         user.setIsDelete(isDelete);
         return userDao.addUser(user);
     }
+
+    @Override
+    public int updateUser(String username, String password, String nickname, String email) {
+        password = MD5Util.md5(password);
+        Date lastEditTime = new Date();
+        return userDao.updateUser(username,password,nickname,email,lastEditTime);
+    }
 }

@@ -30,34 +30,46 @@
                 <form class="ui large form" method="post" id="login-form" action="<%=path%>/admin/updateuser">
                     <div class="ui stacked segment">
                         <div class="required field">
+                            <h5>您的用户名</h5>
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
                                 <input type="text" name="username" id="username-input" value="${sessionScope.user.username}" readonly>
                             </div>
                         </div>
                         <div class="required field">
+                            <h5>昵称</h5>
                             <div class="ui left icon input">
                                 <i class="header icon"></i>
                                 <input type="text" name="nickname" id="nickname-input" value="${sessionScope.user.nickname}">
                             </div>
                         </div>
                         <div class="field">
+                            <h5>新密码</h5>
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
                                 <input type="password" name="password" id="password-input" placeholder="新的密码">
                             </div>
                         </div>
                         <div class="field">
+                            <h5>确认密码</h5>
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
-                                <input type="password" name="password" id="password-input-check" placeholder="确认密码">
+                                <input type="password" name="passwordcheck" id="passwordcheck" placeholder="确认密码">
                             </div>
                         </div>
-                        <div class="ui fluid large teal submit button" id="login">登录</div>
+                        <div class="field">
+                            <h5>邮箱</h5>
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="text" name="email" id="email" value="${sessionScope.user.email}">
+                            </div>
+                        </div>
+                        <div class="ui fluid large teal submit button" id="modify">确认修改</div>
+                    </br>
+                        <div class="ui fluid large btn-block  button" id="return">返回</div>
                     </div>
                     <div class="ui error message"></div>
                 </form>
-                <h1>${requestScope.errMsg}</h1>
             </div>
         </div>
     </div>
@@ -83,6 +95,13 @@
                     prompt:'请输入密码'
                 }]
             },
+            passwordcheck:{
+                identifier: 'passwordcheck',
+                rules:[{
+                    type:'empty',
+                    prompt:'请输入确认密码'
+                }]
+            },
             nickname:{
                 identifier: 'nickname',
                 rules:[{
@@ -90,6 +109,20 @@
                     prompt:'请输入昵称'
                 }]
             }
+        }
+    })
+
+    $("#return").click(function () {
+        window.location.href="<%=path%>/admin/"
+
+    })
+    $("#modify").click(function () {
+        var password = $("#password-input").val();
+        var password_check = $("#passwordcheck").val();
+        if(password!=password_check){
+            alert("两次密码输入不一致");
+            window.location.href = '<%=path%>/admin/myaccount';
+            return false;
         }
     })
 </script>

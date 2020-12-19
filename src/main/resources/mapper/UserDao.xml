@@ -12,4 +12,7 @@
     <insert id="addUser" parameterType="com.hrbeu.Interior.pojo.User" useGeneratedKeys="true">
         insert into tb_user(username,password,email,create_time,last_edit_time,is_delete,nickname) values (#{username},#{password},#{email},#{createTime},#{lastEditTime},#{isDelete},#{nickname})
     </insert>
+    <update id="updateUser">
+        update tb_user set password=#{password},nickname=#{nickname},email=#{email},last_edit_time = #{lastEditTime} where username=#{username}
+    </update>
 </mapper>
