@@ -10,6 +10,7 @@ public class Article {
     private User user;
     private Date createTime;
     private Date lastEditTime;
+    private Integer category;
 
     public Article() {
 
@@ -71,7 +72,15 @@ public class Article {
         this.lastEditTime = lastEditTime;
     }
 
-    public Article(Integer articleId, String articleTitle, String articleContent, String articleImage, User user, Date createTime, Date lastEditTime) {
+    public Integer getCategory() {
+        return category;
+    }
+
+    public void setCategory(Integer category) {
+        this.category = category;
+    }
+
+    public Article(Integer articleId, String articleTitle, String articleContent, String articleImage, User user, Date createTime, Date lastEditTime, Integer category) {
         this.articleId = articleId;
         this.articleTitle = articleTitle;
         this.articleContent = articleContent;
@@ -79,5 +88,6 @@ public class Article {
         this.user = user;
         this.createTime = createTime;
         this.lastEditTime = lastEditTime;
+        this.category = category;
     }
 }

@@ -1,19 +1,15 @@
 package com.hrbeu.Interior.pojo;
 
+import java.util.Date;
+
 public class SlideImage {
     private Integer slideImageId;
-    private String slideImagePath;
+    private String slideImage;
     private String slideImageTitle1;
     private String slideImageTitle2;
+    private Date createTime;
     public SlideImage(){
 
-    }
-
-    public SlideImage(Integer slideImageId, String slideImagePath, String slideImageTitle1, String slideImageTitle2) {
-        this.slideImageId = slideImageId;
-        this.slideImagePath = slideImagePath;
-        this.slideImageTitle1 = slideImageTitle1;
-        this.slideImageTitle2 = slideImageTitle2;
     }
 
     public Integer getSlideImageId() {
@@ -24,12 +20,12 @@ public class SlideImage {
         this.slideImageId = slideImageId;
     }
 
-    public String getSlideImagePath() {
-        return slideImagePath;
+    public String getSlideImage() {
+        return slideImage;
     }
 
-    public void setSlideImagePath(String slideImagePath) {
-        this.slideImagePath = slideImagePath;
+    public void setSlideImage(String slideImage) {
+        this.slideImage = slideImage;
     }
 
     public String getSlideImageTitle1() {
@@ -46,5 +42,21 @@ public class SlideImage {
 
     public void setSlideImageTitle2(String slideImageTitle2) {
         this.slideImageTitle2 = slideImageTitle2;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public SlideImage(Integer slideImageId, String slideImage, String slideImageTitle1, String slideImageTitle2, Date createTime) {
+        this.slideImageId = slideImageId;
+        this.slideImage = slideImage;
+        this.slideImageTitle1 = slideImageTitle1;
+        this.slideImageTitle2 = slideImageTitle2;
+        this.createTime = createTime;
     }
 }

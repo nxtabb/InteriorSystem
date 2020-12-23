@@ -5,7 +5,8 @@
   Time: 10:27 上午
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <%String path = request.getContextPath();%>
@@ -42,34 +43,33 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
+
+
+
+
+
+
     <div class="carousel-inner">
-        <div class="carousel-item active" style="background-image: url(<%=path%>/resources/images/ban1.jpg);">
+        <div class="carousel-item active" style="background-image: url(<%=path%>/resources/images/${slideImage.slideImage});">
             <div class="banner-text">
                 <div class="container">
-                    <h2 class="agile-title text-capitalize">We Create And Renovate Hair Style Trends</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="contact.html" class="btn">View details</a>
+                    <h2 class="agile-title text-capitalize">${slideImage.slideImageTitle1}</h2>
+                    <p>${slideImage.slideImageTitle2}</p>
+                    <a href="contact.html" class="btn">查看更多</a>
                 </div>
             </div>
         </div>
-        <div class="carousel-item" style="background-image: url(<%=path%>/resources/images/ban2.jpg);">
-            <div class="banner-text">
-                <div class="container">
-                    <h2 class="agile-title text-capitalize">We Create And Renovate Hair Style Trends</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="contact.html" class="btn">View details</a>
+        <c:forEach items="${slideImages1}" var="image">
+            <div class="carousel-item" style="background-image: url(<%=path%>/resources/images/${image.slideImage});">
+                <div class="banner-text">
+                    <div class="container">
+                        <h2 class="agile-title text-capitalize">${image.slideImageTitle1}</h2>
+                        <p>${image.slideImageTitle2}</p>
+                        <a href="contact.html" class="btn">查看更多</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item" style="background-image: url(<%=path%>/resources/images/ban3.jpg);">
-            <div class="banner-text">
-                <div class="container">
-                    <h2 class="agile-title text-capitalize">We Create And Renovate Hair Style Trends</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="contact.html" class="btn">View details</a>
-                </div>
-            </div>
-        </div>
+        </c:forEach>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

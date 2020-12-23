@@ -1,25 +1,23 @@
-<%@ page import="com.hrbeu.Interior.pojo.User" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.hrbeu.pojo.User" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2020/9/20
-  Time: 11:54
+  Time: 11:42
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%String path=request.getContextPath();%>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%String path = request.getContextPath();%>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <!--设置移动端-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>后台管理</title>
+    <title>文档管理</title>
     <!--引入css-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="<%=path%>/resources/admin/css/typo.css" >
-    <link rel="stylesheet" href="<%=path%>/resources/admin/css/animate.css">
-    <link rel="stylesheet" href="<%=path%>/resources/admin/lib/prism/prism.css">
-    <link rel="stylesheet" href="<%=path%>/resources/admin/lib/tocbot/tocbot.css">
     <link rel="stylesheet" href="<%=path%>/resources/admin/css/me.css">
 </head>
 
@@ -59,27 +57,74 @@
     </a>
 </nav>
 
-<div class="m-container-small m-padded-tb-big">
+<!--中间内容容器-->
+<div class="m-padded-tb-large m-container-small">
     <div class="ui container">
-        <div class="ui success large message">
-            <h2>Hi,</h2>
-            <p>${sessionScope.user.nickname},欢迎登录</p>
-        </div>
-        <img src="<%=path%>/resources/admin/images/adminindex.jpg" class="ui rounded bordered fluid image">
+        <!--搜索的form-->
+        <h2>当前位置：首页</h2>
+        <!--显示信息的表格-->
+        <table class="ui compact teal table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>标题</th>
+                <th>类型</th>
+                <th>推荐</th>
+                <th>更新时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
 
+            <c:forEach var="document" items="${documentList}">
+
+                <tr>
+                    <td>${document.documentId}</td>
+                    <td>${document.title}</td>
+                    <td>${document.type.typeName}</td>
+                    <td><c:if test="${document.recommend==1}">是</c:if>
+                        <c:if test="${document.recommend==0}">否</c:if></td>
+                    <td><fmt:formatDate value="${document.lastEditTime}" timeStyle="yyyy-MM-dd"/>  </td>
+                    <td>
+                        <a href="<%=path%>/admin/documents/updatedocument/${document.documentId}" class="ui mini teal button">编辑</a>
+                        <a href="<%=path%>/admin/documents/deleteById/${document.documentId}" class="ui mini red button">删除</a>
+                    </td>
+                </tr>
+            </c:forEach>
+
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="6">
+                    <div class="ui mini floated pagination menu">
+                        <a class="icon item" id="prePage">上一页</a>
+                        <a class="icon item" id="nextPage">下一页</a>
+                    </div>
+
+                    <a href="<%=path%>/admin/documents/adddocument" class="ui mini right floated basic button">新增</a>
+                </th>
+            </tr>
+            </tfoot>
+        </table>
     </div>
-
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <!--底部容器-->
 <%@include file="footer.jsp"%>
-
+<!--引入jquery-->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <!--引入semantic的js库-->
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
-<script src="<%=path%>/resources/admin/lib/prism/prism.js" ></script>
-<script src="<%=path%>/resources/admin/lib/tocbot/tocbot.min.js"></script>
 <script>
     $(".menu.toggle").click(function (){
         $(".m-item").toggleClass('m-mobile-hide');
@@ -87,11 +132,18 @@
     $('.ui.dropdown').dropdown({
         on:'hover'
     });
+    $("#nextPage").click(function () {
+        window.location.href="<%=path%>/admin/documentsIndex/"+${nextPage};
+    })
+    $("#prePage").click(function () {
+        window.location.href="<%=path%>/admin/documentsIndex/"+${prePage};
+    })
+    $("#search-btn").click(function (){
+        $("#search_form").submit();
+    })
     $("#index-btn").click(function () {
         window.location.href='<%=path%>/admin/index';
-
     })
 </script>
-
 </body>
 </html>
