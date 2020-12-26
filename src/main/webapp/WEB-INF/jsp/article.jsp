@@ -68,9 +68,6 @@
 <!-- //single-page -->
 <div class="pages">
     <a href="">«</a>
-    <a href="" class="now">1</a>
-    <a href="">2</a>
-    <a href="">3</a>
     <a href="">»</a>
 </div>
 <%@include file="foot.jsp"%>

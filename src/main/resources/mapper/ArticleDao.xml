@@ -27,4 +27,12 @@
     <select id="queryAllArticle" resultType="int">
         select count(*) from tb_article where tb_article.category=1
     </select>
+
+    <select id="queryArticleUp" parameterType="int" resultType="com.hrbeu.Interior.pojo.Article">
+        select * from tb_article where category=1 and article_id > #{value} limit 1
+    </select>
+
+    <select id="queryAllArticleDown" parameterType="int" resultType="com.hrbeu.Interior.pojo.Article">
+        select * from tb_article where category=1 and article_id &lt; #{value} limit 1
+    </select>
 </mapper>

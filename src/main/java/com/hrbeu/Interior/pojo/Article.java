@@ -1,5 +1,6 @@
 package com.hrbeu.Interior.pojo;
 
+
 import java.util.Date;
 
 public class Article {

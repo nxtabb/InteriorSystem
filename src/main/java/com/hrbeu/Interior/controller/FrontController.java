@@ -62,6 +62,16 @@ public class FrontController {
     public String article(@PathVariable("articleId")Integer articleId,Model model){
         Article article = articleService.querySelectedArticle(articleId);
         model.addAttribute("article",article);
+        Map<String,Article> articleUpAndDown = articleService.queryUpAndDown(articleId);
+        Article articleDown = (Article)articleUpAndDown.get("articleUp");
+        if(articleDown!=null){
+            Integer articleDownId = articleDown.getArticleId();
+        }
+        else {
+            Integer articleDownId = null;
+        }
+
+
         return "article";
     }
 
@@ -71,7 +81,8 @@ public class FrontController {
         int articleCount = articleService.queryAllArticleCount();
         Map<String,Integer> pageInfo = PageUtil.page(pageIndex,12,articleCount);
         model.addAttribute("articles",articles);
-        model.addAttribute("page",pageInfo);
+        model.addAttribute("pageInfo",pageInfo);
+        model.addAttribute("pageIndex",pageIndex);
         return "articleList";
     }
 }

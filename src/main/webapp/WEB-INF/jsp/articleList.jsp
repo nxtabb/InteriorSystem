@@ -1,11 +1,11 @@
-<%--
+<%@ page import="java.util.Map" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2020/12/25
   Time: 15:36
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%String path = request.getContextPath();%>
@@ -39,7 +39,7 @@
 <%@include file="head.jsp"%>
 <!-- //header -->
 
-<div class="inner-page-banner" style="background-image: url(images/ban1.jpg);">
+<div class="inner-page-banner" style="background-image: url(<%=path%>/resources/images/ban1.jpg);">
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -77,11 +77,13 @@
                 </div>
             </div>
             <div class="pages">
-                <a href="">«</a>
-                <a href="" class="now">1</a>
-                <a href="">2</a>
-                <a href="">3</a>
-                <a href="">»</a>
+                <a href="<%=path%>/articlelist/${pageInfo.get("prePage")}">«</a>
+                <c:if test="${pageInfo.get('prePage')}>2">
+                <a href="<%=path%>/articlelist/${pageInfo.get("prePage")}">${pageInfo.get("prePage")}</a></c:if>
+                <a href="<%=path%>/articlelist/${pageIndex}">${pageIndex}</a>
+                <c:if test="${pageInfo.get('nextPage')}>2">
+                <a href="<%=path%>/articlelist/${pageInfo.get("prePage")}">${pageInfo.get("prePage")}</a></c:if>
+                <a href="<%=path%>/articlelist/${pageInfo.get("nextPage")}">»</a>
             </div>
         </div>
     </div>

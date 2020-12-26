@@ -15,7 +15,7 @@ public class TestUserDao extends BaseTest {
     private ArticleDao articleDao;
     @Test
     public void test01(){
-        Article article = articleDao.querySelectedArticle(1);
+        Article article = articleDao.queryAllArticleDown(2);
         System.out.println(article);
     }
 }
