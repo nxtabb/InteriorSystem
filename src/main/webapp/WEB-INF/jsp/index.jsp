@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <%String path = request.getContextPath();%>
@@ -89,9 +90,9 @@
         <div class="info-w3pvt-mid">
             <div class="title-desc text-center">
                 <p>
-                    Praesent ullamcorper dui turpis.At vero eos et accusam et justo duo dolores et ea rebum.Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis. Praesent ullamcorper dui turpis.At vero eos et accusam et justo duo dolores et ea rebum.Integer sit amet mattis quam, sit amet ultricies velit. Praesent ullamcorper dui turpis.
+                   ${about.content}
                 </p>
-                <a class="btn mt-lg-4 mt-3 read scroll" href="#" role="button">查看更多</a>
+                <a class="btn mt-lg-4 mt-3 read scroll" href="<%=path%>/aboutus" role="button">查看更多</a>
             </div>
         </div>
     </div>
@@ -105,121 +106,41 @@
             <div class="col-lg-6  mb-lg-0 mb-5">
                 <div class="padding">
                     <h3 class="text-light pb-2">室内设计指导/Guidance</h3>
+                    <c:forEach items="${articles}" var="article">
                     <!-- Item starts -->
                     <div class="menu-item my-3">
                         <div class="row border-dot no-gutters">
                             <div class="col-8 menu-item-name">
-                                <a href="detail1.html">
-                                    <h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
+                                <a href="<%=path%>/article/${article.articleId}">
+                                    <h6 class="text-light">${article.articleTitle}</h6>
                                 </a>
                             </div>
                             <div class="col-4 menu-item-price text-right">
-                                <h6 class="text-light">2020-3-07</h6>
+                                <h6 class="text-light"><fmt:formatDate value="${article.lastEditTime}" pattern="yyyy-MM-dd"/></h6>
                             </div>
                         </div>
 
                     </div>
-                    <!-- Item ends -->
-                    <!-- Item starts -->
-                    <div class="menu-item my-3">
-                        <div class="row border-dot no-gutters">
-                            <div class="col-8 menu-item-name">
-                                <a href="detail1.html">
-                                    <h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
-                                </a>
-                            </div>
-                            <div class="col-4 menu-item-price text-right">
-                                <h6 class="text-light">2020-3-10</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Item ends -->
-                    <!-- Item starts -->
-                    <div class="menu-item my-3">
-                        <div class="row border-dot no-gutters">
-                            <div class="col-8 menu-item-name">
-                                <a href="detail1.html">
-                                    <h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
-                                </a>
-                            </div>
-                            <div class="col-4 menu-item-price text-right">
-                                <h6 class="text-light">2020-3-15</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Item ends -->
-                    <!-- Item starts -->
-                    <div class="menu-item my-3">
-                        <div class="row border-dot no-gutters">
-                            <div class="col-8 menu-item-name">
-                                <a href="detail1.html">
-                                    <h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
-                                </a>
-                            </div>
-                            <div class="col-4 menu-item-price text-right">
-                                <h6 class="text-light">2020-3-15</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Item ends -->
-                    <!-- Item starts -->
-                    <div class="menu-item my-3">
-                        <div class="row border-dot no-gutters">
-                            <div class="col-8 menu-item-name">
-                                <a href="detail1.html">
-                                    <h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
-                                </a>
-                            </div>
-                            <div class="col-4 menu-item-price text-right">
-                                <h6 class="text-light">2020-3-20</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Item ends -->
-                    <!-- Item starts -->
-                    <div class="menu-item my-3">
-                        <div class="row border-dot no-gutters">
-                            <div class="col-8 menu-item-name">
-                                <a href="detail1.html">
-                                    <h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
-                                </a>
-                            </div>
-                            <div class="col-4 menu-item-price text-right">
-                                <h6 class="text-light">2020-3-25</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="menu-item my-3">
-                        <div class="row border-dot no-gutters">
-                            <div class="col-8 menu-item-name">
-                                <a href="detail1.html">
-                                    <h6 class="text-light">TRIM YOUR MUSTACHES STYLE</h6>
-                                </a>
-                            </div>
-                            <div class="col-4 menu-item-price text-right">
-                                <h6 class="text-light">2020-3-25</h6>
-                            </div>
-                        </div>
-                    </div>
+                    </c:forEach>
                     <!-- Item ends -->
                 </div>
             </div>
             <div class="col-lg-6 mb-lg-0 mb-5">
                 <div class="padding">
-                    <a href="#"><img class="pt-4" src="<%=path%>/resources/images/contact.jpg" alt=""></a>
+                    <a href="#"><img class="pt-4" src="<%=path%>/resources/images/${news.get(0).articleImage}" alt=""></a>
                     <div class="menu-item mt-3 mb-2">
                         <div class="row no-gutters">
                             <div class="col-8 menu-item-name">
                                 <a href="detail1.html">
-                                    <h5 class="text-light">TRIM YOUR MUSTACHES STYLE</h5>
+                                    <h5 class="text-light">${news.get(0).articleTitle}</h5>
                                 </a>
                             </div>
                             <div class="col-4 menu-item-price text-right">
-                                <h6 class="text-light">2020-3-25</h6>
+                                <h6 class="text-light"><fmt:formatDate value="${news.get(0).lastEditTime}" pattern="yyyy-MM-dd"/></h6>
                             </div>
                         </div>
                     </div>
-                    <p class="text-light">Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.</p>
+                    <p class="text-light">${news.get(0).articleContent}</p>
                 </div>
             </div>
         </div>
