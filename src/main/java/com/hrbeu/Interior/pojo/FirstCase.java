@@ -8,6 +8,7 @@ public class FirstCase {
     private String firstCaseImage;
     private Date createTime;
     private Date lastEditTime;
+    private String description;
     public FirstCase(){
 
     }
@@ -52,11 +53,20 @@ public class FirstCase {
         this.lastEditTime = lastEditTime;
     }
 
-    public FirstCase(Integer firstCaseId, String firstCaseName, String firstCaseImage, Date createTime, Date lastEditTime) {
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public FirstCase(Integer firstCaseId, String firstCaseName, String firstCaseImage, Date createTime, Date lastEditTime, String description) {
         this.firstCaseId = firstCaseId;
         this.firstCaseName = firstCaseName;
         this.firstCaseImage = firstCaseImage;
         this.createTime = createTime;
         this.lastEditTime = lastEditTime;
+        this.description = description;
     }
 }

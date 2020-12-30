@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hrbeu.Interior.dao.StandardDao">
+    <resultMap id="myStandard" type="com.hrbeu.Interior.pojo.Standard">
+        <id property="standardId" column="standard_id"/>
+        <association property="firstCase" column="first_case_id" javaType="com.hrbeu.Interior.pojo.FirstCase">
+            <id column="first_case_id" property="firstCaseId"/>
+            <result column="first_case_name" property="firstCaseName"/>
+            <result property="firstCaseImage" column="first_case_image"/>
+            <result property="description" column="description"/>
+            <result property="lastEditTime" column="last_edit_time"/>
+        </association>
+    </resultMap>
+    <!-- SQL语句 -->
+    <select id="queryByCondition" resultMap="myStandard">
+        select * from tb_firstcase fir inner join tb_standard std on fir.first_case_id = std.first_case_id
+        and #{age} &gt;= std.min_age
+        and #{age} &lt;= std.max_age
+        and #{money} &gt;= std.min_money
+        and #{money} &lt;= std.max_money
+        and #{pet} &lt;= std.is_pet
+    </select>
+    <select id="queryAll" resultMap="myStandard">
+        select * from tb_firstcase fir inner join tb_standard std on fir.first_case_id = std.first_case_id
+    </select>
+</mapper>

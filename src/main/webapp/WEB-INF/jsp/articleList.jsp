@@ -43,9 +43,8 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data</li>
+                <li class="breadcrumb-item"><a href="<%=path%>/index">网站首页</a></li>
+                <li class="breadcrumb-item"><a href="<%=path%>/articlelist/1">文章列表</a></li>
             </ol>
         </nav>
     </div>

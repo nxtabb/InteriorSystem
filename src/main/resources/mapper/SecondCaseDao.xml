@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hrbeu.Interior.dao.SecondCaseDao">
+    <resultMap id="MySecondCase" type="com.hrbeu.Interior.pojo.SecondCase">
+        <id property="secondCaseId" column="second_case_id"/>
+        <result property="secondCaseDescription" column="second_case_description"/>
+        <result property="secondCaseImage" column="second_case_image"/>
+        <result property="createTime" column="create_time"/>
+        <result property="lastEditTime" column="last_edit_time"/>
+        <association property="firstCase" column="first_case_id" javaType="com.hrbeu.Interior.pojo.FirstCase">
+            <id property="firstCaseId" column="first_case_id"/>
+            <result property="firstCaseName" column="first_case_name"/>
+            <result property="firstCaseImage" column="first_case_image"/>
+            <result property="description" column="description"/>
+        </association>
+    </resultMap>
+    <select id="querySecondCaseByIdAndPage" resultMap="MySecondCase">
+        select * from tb_secondcase sec,tb_firstcase fir where sec.first_case_id = fir.first_case_id and sec.first_case_id = #{firstCaseId} limit #{leftLimit},#{rightLimit}
+    </select>
+
+    <select id="querySecondCaseCountById" parameterType="int" resultType="int">
+        select count(*) from tb_secondcase where first_case_id = #{value}
+    </select>
+
+    <select id="queryById" parameterType="int" resultType="com.hrbeu.Interior.pojo.SecondCase">
+        select * from tb_secondcase where second_case_id = #{value}
+    </select>
+</mapper>

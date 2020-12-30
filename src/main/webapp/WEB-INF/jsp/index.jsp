@@ -12,7 +12,7 @@
 <html>
 <%String path = request.getContextPath();%>
 <head>
-    <title>Home</title>
+    <title>首页</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -44,12 +44,6 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
-
-
-
-
-
-
     <div class="carousel-inner">
         <div class="carousel-item active" style="background-image: url(<%=path%>/resources/images/${slideImage.slideImage});">
             <div class="banner-text">
@@ -84,7 +78,7 @@
 <!-- //banner -->
 
 <!-- about -->
-<section class="content-info" style="background-image: url();">
+<section class="content-info" style="background-image: url(<%=path%>/resources/images/bg.jpg);">
     <div class="container">
         <h3 class="heading text-center mb-3 mb-sm-5">About us/关于我们</h3>
         <div class="info-w3pvt-mid">
@@ -148,143 +142,33 @@
 </section>
 <!-- /services -->
 
-<section class="services" id="services" style="background-image: url();">
+<section class="services" id="services" style="background-image: url(<%=path%>/resources/images/bg1.jpg);">
     <div class="container">
         <h3 class="heading text-center mb-5">案例展示/CASE</h3>
         <div class="row">
+            <c:forEach var="indexImage" items="${indexImageList}">
             <div class="col-md-3 col-sm-6 col-12 mb-2">
                 <div class="ab-content-inner">
-                    <a href="single.html"><img src="<%=path%>/resources/images/services1.jpg" alt="news image" class="img-fluid"></a>
+                    <a href="<%=path%>/firstCase/${indexImage.firstCaseName}/1"><img src="<%=path%>/resources/images/indexExamples/${indexImage.firstCaseImage}" alt="news image"  width="200px" height="130px"></a>
                     <div class="ab-info-con">
-                        <a href="single.html">
-                            <h4>88001</h4>
+                        <a href="<%=path%>/firstCase/${indexImage.firstCaseName}/1">
+                            <h4>${indexImage.firstCaseName}</h4>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6 col-12 mb-2">
-                <div class="ab-content-inner">
-                    <a href="single.html"><img src="<%=path%>/resources/images/services2.jpg" alt="news image" class="img-fluid"></a>
-                    <div class="ab-info-con">
-                        <a href="single.html">
-                            <h4>88001</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-12 mb-2">
-                <div class="ab-content-inner">
-                    <a href="single.html"><img src="<%=path%>/resources/images/services3.jpg" alt="news image" class="img-fluid"></a>
-                    <div class="ab-info-con">
-                        <a href="single.html">
-                            <h4>88001</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-12 mb-2">
-                <div class="ab-content-inner">
-                    <a href="single.html"><img src="<%=path%>/resources/images/services4.jpg" alt="news image" class="img-fluid"></a>
-                    <div class="ab-info-con">
-                        <a href="single.html">
-                            <h4>88001</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-12 mb-2">
-                <div class="ab-content-inner">
-                    <a href="single.html"><img src="<%=path%>/resources/images/services5.jpg" alt="news image" class="img-fluid"></a>
-                    <div class="ab-info-con">
-                        <a href="single.html">
-                            <h4>88001</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-12 mb-2">
-                <div class="ab-content-inner">
-                    <a href="single.html"><img src="<%=path%>/resources/images/services6.jpg" alt="news image" class="img-fluid"></a>
-                    <div class="ab-info-con">
-                        <a href="single.html">
-                            <h4>88001</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-12 mb-2">
-                <div class="ab-content-inner">
-                    <a href="single.html"><img src="<%=path%>/resources/images/services5.jpg" alt="news image" class="img-fluid"></a>
-                    <div class="ab-info-con">
-                        <a href="single.html">
-                            <h4>88001</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-12 mb-2">
-                <div class="ab-content-inner">
-                    <a href="single.html"><img src="<%=path%>/resources/images/services2.jpg" alt="news image" class="img-fluid"></a>
-                    <div class="ab-info-con">
-                        <a href="single.html">
-                            <h4>88001</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            </c:forEach>
         </div>
     </div>
 
 </section>
 <!-- /services -->
-
-<div>
-    <table align="center" style="text-align: center">
-    <form>
-
-        <div class="form-group">
-            <tr>
-                <td>
-            <label for="exampleInputEmail1">收入</label>
-                </td>
-            <td>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="收入"  >
-            </td>
-            </tr>
-        </div>
-        <div class="form-group">
-            <tr>
-                <td><label for="exampleInputPassword1">年龄</label></td>
-                <td>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="年龄"></td>
-            </tr>
-        </div>
-
-        <div class="checkbox">
-            <tr>
-                <td>
-                    &nbsp;&nbsp;
-            <label>
-                <input type="checkbox"> 已婚
-            </label>
-                </td>
-                <td><button type="submit"  class="btn btn-default">Submit</button></td>
-            </tr>
-        </div>
-
-    </form>
-    </table>
-</div>
 <%@include file="foot.jsp"%>
 <!-- //footer -->
 
 
 <script src="<%=path%>/resources/js/jquery-3.2.1.min.js"></script>
 <script src="<%=path%>/resources/js/bootstrap.min.js"></script>
-<script>
-    var a = ($(document).height() - $('form').height()) / 2;
-    $('form').css('margin-top', a + 'px');
-</script>
 </body>
 
 </html>

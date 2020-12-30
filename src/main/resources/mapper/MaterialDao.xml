@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hrbeu.Interior.dao.MaterialDao">
+    <!-- SQL语句 -->
+    <resultMap id="myMaterial" type="com.hrbeu.Interior.pojo.Material">
+        <id column="material_id" property="materialId"/>
+        <result column="material_price" property="materialPrice"/>
+        <result column="material_name" property="materialName"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_edit_time" property="lastEditTime"/>
+        <association property="secondCase" column="second_case_id" javaType="com.hrbeu.Interior.pojo.SecondCase">
+            <id column="second_case_id" property="secondCaseId"/>
+            <result column="second_case_description" property="secondCaseDescription"/>
+            <result column="second_case_image" property="secondCaseImage"/>
+        </association>
+    </resultMap>
+    <select id="queryBySecondCaseId" parameterType="int" resultMap="myMaterial">
+        select * from tb_material mat,tb_secondcase sec where mat.second_case_id = sec.second_case_id and mat.second_case_id = #{value}
+    </select>
+</mapper>

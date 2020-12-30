@@ -39,6 +39,8 @@ public class ArticleServiceImpl implements ArticleService {
         Article articleDown = null;
         articleDown = articleDao.queryAllArticleDown(articleId);
         Map<String,Article> articleMap = new HashMap<>();
+        articleMap.put("articleUp",articleUp);
+        articleMap.put("articleDown",articleDown);
         return articleMap;
     }
 }

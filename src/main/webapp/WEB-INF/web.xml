@@ -14,5 +14,13 @@
     <servlet-name>spring-dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+<!--  <filter>-->
+<!--    <filter-name>refererFilter</filter-name>-->
+<!--    <filter-class>com.hrbeu.Interior.filter.RefererFilter</filter-class>-->
+<!--  </filter>-->
+<!--  <filter-mapping>-->
+<!--    <filter-name>refererFilter</filter-name>-->
+<!--    <url-pattern>/article/*</url-pattern>-->
+<!--  </filter-mapping>-->
 </web-app>
 

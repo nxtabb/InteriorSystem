@@ -12,7 +12,7 @@
 <html lang="en">
 
 <head>
-    <title>推荐文章</title>
+    <title>装修相关文章</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -67,8 +67,8 @@
 </section>
 <!-- //single-page -->
 <div class="pages">
-    <a href="">«</a>
-    <a href="">»</a>
+    <a href="<%=path%>/article/${articleUpId}">«</a>
+    <a href="<%=path%>/article/${articleDownId}">»</a>
 </div>
 <%@include file="foot.jsp"%>
 
